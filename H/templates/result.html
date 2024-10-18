@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>E-Hospital</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<style>
+ 
+
+ .bg-container{
+  background-image: url('https://media.licdn.com/dms/image/D5612AQHe7vRE3UNj0w/article-cover_image-shrink_720_1280/0/1693010842632?e=2147483647&v=beta&t=H45Ys7yIq-fJK83QEBAkl4ptWXl5Q44K4YMjuQpZA-k');
+  background-size: cover;
+  height: 100vh;
+ }
+
+ .bg-container1{
+  background-image: url('https://i.pinimg.com/736x/8e/53/fe/8e53feaaf3af0c50492a7dd12505c36f.jpg');
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+ }
+
+ .hdp{
+  text-align: center;
+  color: rgb(216, 255, 180);
+  font-family: Caveat;
+  position: relative;
+  width: max-content;
+  cursor: pointer;
+  margin: 100px auto;
+  font-size: 60px;
+ }
+
+ .hdp::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: -4px;
+  height: 4px;
+  left: 0;
+  background-color: #fff;
+  transition: 0.3s;
+  transition-timing-function: ease-in-out;
+  transform: scaleX(0);
+ }
+
+ .hdp:hover::after{
+  transform: scaleX(1);
+ }
+
+ .prediciton-result{
+  color: aquamarine;
+  font-family: cursive;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+ }
+
+.prediction-para{
+  color: rgb(255, 80, 74);
+  font-family: lucida console;
+  font-size: 30px;
+  margin-top: 50px;
+  padding-left: 30px;
+}
+
+span{
+  color: antiquewhite;
+  font-size: 40px;
+  font-family: cursive;
+  font-weight: bold;
+}
+
+.prediction-para1{
+  color: rgb(57, 62, 62);
+  display: flex;
+  font-size: 30px;
+  margin: 20px;
+
+}
+
+
+span{
+  color: antiquewhite;
+  font-weight: bold;
+  font-family: cursive;
+  font-size: 40px;
+}
+
+.hh{
+  height: 300px;
+  width: 300px;
+  display: fixed;
+  border-radius: 10px;
+  align-items: center;
+  padding-top: 50px;
+}
+
+</style>
+</head>
+<body>
+
+  
+  <div class="bg-container">
+  <h2 class="result1-heading"><a href = '/'> <p class="hdp">Heart Disease Prediction</p></a></h2>
+   
+  <h2 class="prediciton-result">PREDICTION RESULT:-</h2>
+ 
+  {% if prediction == 1%}
+
+  <p class="prediction-para">Sorry to say</p>
+
+  <p class="prediction-para">You have chances of Heart Stroke and CardioVascular disease </p>
+
+
+  <p class="prediction-para">Please Consult a <span>DOCTOR</span></p>
+  </div>
+
+
+
+
+  {% elif prediction == 0%}
+
+
+
+  <div class="bg-container1">
+
+  <div class="d-flex">
+	<h1 class="prediction-para">No Worries!!</h1>
+  <p class="prediction-para">You Doesn't Have Any Heart Problems</p>
+  <br>
+  <p class="prediction-para">STAY <span>FIT</span> STAY <span>HEALTHY.....</span></p>
+  
+
+  <div>
+    <img src="https://cdn.dribbble.com/users/246068/screenshots/9917057/media/5f817284b807c581b2a64a72b2f37edc.gif" class="hh" height="300px" width="300px"/>
+  </div>
+
+  </div>
+  </div>
+  
+
+
+	{% endif %}
+
+  
+  
+
+  </body>
+  </html>
+  
+
+    

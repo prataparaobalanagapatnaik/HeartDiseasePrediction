@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HEART-DISEASE PREDICTOR</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style1.css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+<script src="script.js" defer></script>
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: rgba(49, 30, 124, 0.878);
+  height: 15vh;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(56, 15, 238);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:5;
+  animation: forwards;
+  animation-duration: 1s;
+}
+
+
+.bg-container{
+    background-image: url('https://media.istockphoto.com/id/1355489119/vector/vector-illustration-ecg-heartbeat-display-medical-background.jpg?s=612x612&w=0&k=20&c=HqbcQAAf4knozGjw3yy4jmSHtggpQ59RRxhWgHjH684=');
+    background-size: cover;
+}
+
+.navbar-main{
+    font-weight: bold;
+    color: #1d1717;
+    font-family: roboto;
+}
+
+.nav-item{
+    font-weight: bold;
+    color: #1d1717;
+    font-family: roboto;
+}
+
+.nav-item:hover{
+  background-color: aliceblue;
+  text-decoration: underline;
+  text-decoration-color: #000;
+  text-decoration-thickness: 2px;
+  opacity: 5px;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+.center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #4d00dbc5;
+  padding: 10px;
+}
+
+</style>
+</head>
+
+<body>
+  
+  <div class="bg-container">
+    <div>
+      <nav class="navbar">
+        <a class="navbar-brand" href="#">
+          <img src="https://img.freepik.com/premium-photo/background-with-heart-with-heartbeat-monitor-line-heart-heartbeat-symbol-generative-ai_620624-6646.jpg" width="150" height="100" class="d-inline-block align-top" style="border-radius: 10px;" alt="">
+        </a>   
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="/" style="font-family: sans-serif; font-size: 30px; color: #ccc; margin: 20px; animation: forwards; text-decoration: solid; text-decoration-color: aqua; animation-duration: 2s;" target="_blank">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="https://www.nhlbi.nih.gov/health/heart-healthy-living/healthy-foods" style="font-family: sans-serif; font-size: 30px; color: #ccc; margin: 20px; animation: forwards; text-decoration: solid; text-decoration-color: aqua; animation-duration: 2s;"  href="#section_heart_foods">heart related <br> Foods</a>
+            <div class="dropdown">
+              <button class="dropbtn" style="font-family: sans-serif; font-size: 30px; color: #ccc; margin: 20px; animation: forwards; text-decoration: solid; text-decoration-color: aqua; animation-duration: 2s; cursor: pointer;">PREDICTOR Info
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="#" target="_blank">->PREDICTOR PARAMETERS</a>
+                <a href="https://www.maxhealthcare.in/blogs/first-aid-for-heart-attack-what-to-do-and-not-to-do" target="_blank">->RAPID STEPS AFTER GETTING HEART STROKE</a>
+                <a href="https://www.kaggle.com/datasets/nareshbhat/health-care-data-set-on-heart-attack-possibility" target="_blank">->HEART-DISEASE dataset</a>
+              </div>
+            </div>
+            
+            <div class="dropdown">
+              <button class="dropbtn" style="font-family: sans-serif; font-size: 30px; color: #ccc; margin: 20px; animation: forwards; text-decoration: solid; text-decoration-color: aqua; animation-duration: 2s; cursor: pointer;">Know More..
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="https://strokefoundation.org.au/about-stroke/learn/signs-of-stroke?_id=3B151110E8804757A48BC316EEDC82EE&_z=z" target="_blank">->Signs Of Strokes</a>
+                <a href="https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/heart-disease-and-stroke" target="_blank">->Types Of Strokes</a>
+                <a href="https://www.practo.com/visakhapatnam/cardiologist" target="_blank">->Consultant Cardiologists in Your Locality</a>
+              </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+  
+  <h1><a href = '/'> <p style="text-align:center; font-size: 50px; font-family: cursive; color: rgb(188, 230, 247);">Heart Disease Prediction</p></a></h1>
+
+  <marquee style="font-family: roboto; font-size: 40px; color: rgb(239, 98, 150);">"For Every Heart Beat, the Life <I>Counts!"</I>....Predict your Heart-Condition (NOW)..because"--PREVENTION IS BETTER THAN CURE"</marquee>
+  
+   
+  <div class="center">
+  <form action="/predict"method="post">
+    <input type="text" name="chest pain type (4 values)" placeholder="chest pain type (values 0,1,2,3)" required="required" />
+    <input type="text" name="resting blood pressure" placeholder="resting blood pressure" required="required" /> 
+  <input type="text" name="serum cholestoral in mg/dl" placeholder="serum cholestoral in mg/dl" required="required" />
+  <input type="text" name="fasting blood sugar > 120 mg/dl" placeholder="fasting blood sugar > 120 mg/dl" required="required" />  
+  <input type="text" name="resting electrocardiographic results (values 0,1,2)" placeholder="resting electrocardiographic results (values 0,1,2)" required="required" />
+    <input type="text" name="maximum heart rate achieved" placeholder="maximum heart rate achieved" required="required" />
+    <input type="text" name="exercise induced angina" placeholder="exercise induced angina" required="required" />
+    <button type="submit" class="registerbtn" style="font-size: 30px; font-weight: bold;">Predict</button>
+    
+  </form>
+  </div>
+</div>
+</div>
+
+
+</body>
+</html>
+  
+
+    
